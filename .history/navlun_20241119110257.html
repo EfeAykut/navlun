@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navlun İstek Formu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="date"] {
+            padding: 7px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .form-section h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Navlun İstek Formu</h1>
+    </header>
+    <div class="container">
+        <section class="form-section">
+            <h2>Navlun İstek Bilgileri</h2>
+            <label for="istekNo">Navlun İstek No:</label>
+            <input type="text" id="istekNo" placeholder="Navlun İstek No">
+
+            <label for="istekTarihi">İstek Tarihi:</label>
+            <input type="date" id="istekTarihi">
+
+            <label for="navlunTipi">Navlun Tipi:</label>
+            <input type="text" id="navlunTipi" placeholder="Navlun Tipi">
+        </section>
+
+        <section class="form-section">
+            <h2>Liman ve Hat Bilgileri</h2>
+            <label for="yüklemeLimani">Yükleme Limanı:</label>
+            <input type="text" id="yüklemeLimani" placeholder="Yükleme Limanı">
+
+            <label for="boşaltmaLimani">Boşaltma Limanı:</label>
+            <input type="text" id="boşaltmaLimani" placeholder="Boşaltma Limanı">
+
+            <label for="hat">Hat:</label>
+            <select id="hat">
+                <option value="Hapag">Hapag</option>
+                <option value="Tolga">Tolga</option>
+                <option value="Efe">Efe</option>
+            </select>
+
+            <label for="geçerlilik">Geçerlilik:</label>
+            <input type="text" id="geçerlilik" placeholder="Geçerlilik">
+
+            <label for="taşımaSüresi">Taşıma Süresi:</label>
+            <input type="text" id="taşımaSüresi" placeholder="Taşıma Süresi">
+
+            <label for="referans">Referans:</label>
+            <input type="text" id="referans" placeholder="Referans">
+        </section>
+
+        <section class="form-section">
+            <h2>Hizmet Bilgileri</h2>
+            <label for="navlunBedeli">Navlun Bedeli:</label>
+            <input type="text" id="navlunBedeli" placeholder="Navlun Bedeli">
+
+            <label for="yüklemeLimaniLokalleri">Yükleme Limanı Lokalleri:</label>
+            <input type="text" id="yüklemeLimaniLokalleri" placeholder="Yükleme Limanı Lokalleri">
+
+            <label for="yaklaşıkTonaj">Yaklaşık Tonaj:</label>
+            <input type="text" id="yaklaşıkTonaj" placeholder="Yaklaşık Tonaj">
+
+            <label for="paraBirimi">Para Birimi:</label>
+            <select id="paraBirimi">
+                <option value="TL">TL</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi Başlığı</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #040080;
+            /* Arka plan rengi */
+            border-bottom: 1px solid #ccc;
+            /* Alt kenar çizgisi */
+        }
+
+        .logo img {
+            height: 50px;
+            /* Logo yüksekliği */
+        }
+
+        .navlun-teklif h1 {
+            font-size: 24px;
+            /* Yazı boyutu */
+            color: #fdfffa;
+            /* Yazı rengi */
+            margin: 0;
+            /* Varsayılan margin kaldırıldı */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-group input[type="text"] {
+            width: 97%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            /* Sağda boşluk vermek için */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .pdf-button {
+            background-color: red;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pdf-button:hover {
+            background-color: darkred;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+
+        function saveAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Sayfanın içeriğini al
+            const header = document.querySelector('header').innerHTML;
+            const content = document.querySelector('.container').innerHTML;
+
+            // PDF'ye ekle
+            doc.text(header, 10, 10);
+            doc.fromHTML(content, 10, 20);
+            doc.save('teklif.pdf');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/efe.png" alt="Logo">
+        </div>
+        <div class="navlun-teklif">
+            <h1>Navlun Teklif Formu</h1>
+        </div>
+    </header>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="teklif-fiyati">Teklif Fiyatı (USD):</label>
+                <input type="text" id="teklif-fiyati" name="teklif-fiyati">
+            </div>
+            <div class="form-group">
+                <label for="teslim-suresi">Teslim Süresi (Gün):</label>
+                <input type="text" id="teslim-suresi" name="teslim-suresi">
+            </div>
+            <div class="form-group">
+                <label for="ek-sartlar">Ek Şartlar:</label>
+                <input type="text" id="ek-sartlar" name="ek-sartlar">
+            </div>
+            <button type="button" class="button">Teklifi Gönder</button>
+            <button type="button" class="pdf-button" onclick="saveAsPDF()">PDF</button>
+        </form>
+    </div>
+</body>
+
+</html>

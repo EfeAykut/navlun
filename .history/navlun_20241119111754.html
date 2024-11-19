@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navlun İstek Formu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #010c6e;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            margin: 0 10px;
+        }
+
+        .header-title {
+            flex-grow: 1;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #000c59;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="date"] {
+            padding: 7px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #fafafa;
+            outline: none;
+        }
+
+        .form-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .hizmet-bilgileri {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hizmet-bilgileri .hizmet-bolumu {
+            flex: 1;
+            margin-right: 10px;
+            /* Sağ bölüm için boşluk */
+        }
+
+        .hizmet-bilgileri .hizmet-bolumu:last-child {
+            margin-right: 0;
+            /* Son bölüm için boşluk kaldır */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/efe.png" alt="Sol Logo" class="logo">
+        <div class="header-title">
+            <h1>Navlun İstek Formu</h1>
+        </div>
+        <img src="images/unnamed.png" alt="Sağ Logo" class="logo">
+    </header>
+    <div class="container">
+        <section class="form-section">
+            <h2>Navlun İstek Bilgileri</h2>
+            <label for="istekNo">Navlun İstek No:</label>
+            <input type="text" id="istekNo" placeholder="Navlun İstek No">
+
+            <label for="istekTarihi">İstek Tarihi:</label>
+            <input type="date" id="istekTarihi">
+
+            <label for="navlunTipi">Navlun Tipi:</label>
+            <input type="text" id="navlunTipi" placeholder="Navlun Tipi">
+        </section>
+
+        <section class="form-section">
+            <h2>Liman ve Hat Bilgileri</h2>
+            <label for="yüklemeLimani">Yükleme Limanı:</label>
+            <input type="text" id="yüklemeLimani" placeholder="Yükleme Limanı">
+
+            <label for="boşaltmaLimani">Boşaltma Limanı:</label>
+            <input type="text" id="boşaltmaLimani" placeholder="Boşaltma Limanı">
+
+            <label for="hat">Hat:</label>
+            <select id="hat">
+                <option value="Hapag">Hapag</option>
+                <option value="Tolga">Tolga</option>
+                <option value="Efe">Efe</option>
+            </select>
+
+            <label for="geçerlilik">Geçerlilik:</label>
+            <input type="text" id="geçerlilik" placeholder="Geçerlilik">
+
+            <label for="taşımaSüresi">Taşıma Süresi:</label>
+            <input type="text" id="taşımaSüresi" placeholder="Taşıma Süresi">
+
+            <label for="referans">Refer ans:</label>
+            <input type="text" id="referans" placeholder="Referans">
+        </section>
+
+        <section class="form-section">
+            <h2>Hizmet Bilgileri</h2>
+            <div class="hizmet-bilgileri">
+                <div class="hizmet-bolumu">
+                    <h3>40 HC Standart</h3>
+                    <label for="navlunBedeli40">Navlun Bedeli:</label>
+                    <input type="text" id="navlunBedeli40" placeholder="Navlun Bedeli">
+
+                    <label for="yüklemeLimaniLokalleri40">Yükleme Limanı Lokalleri:</label>
+                    <input type="text" id="yüklemeLimaniLokalleri40" placeholder="Yükleme Limanı Lokalleri">
+
+                    <label for="yaklaşıkTonaj40">Yaklaşık Tonaj:</label>
+                    <input type="text" id="yaklaşıkTonaj40" placeholder="Yaklaşık Tonaj">
+
+                    <label for="paraBirimi40">Para Birimi:</label>
+                    <select id="paraBirimi40">
+                        <option value="TL">TL</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
+
+                <div class="hizmet-bolumu">
+                    <h3>20 HC Standart</h3>
+                    <label for="navlunBedeli20">Navlun Bedeli:</label>
+                    <input type="text" id="navlunBedeli20" placeholder="Navlun Bedeli">
+
+                    <label for="yüklemeLimaniLokalleri20">Yükleme Limanı Lokalleri:</label>
+                    <input type="text" id="yüklemeLimaniLokalleri20" placeholder="Yükleme Limanı Lokalleri">
+
+                    <label for="yaklaşıkTonaj20">Yaklaşık Tonaj:</label>
+                    <input type="text" id="yaklaşıkTonaj20" placeholder="Yaklaşık Tonaj">
+
+                    <label for="paraBirimi20">Para Birimi:</label>
+                    <select id="paraBirimi20">
+                        <option value="TL">TL</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
